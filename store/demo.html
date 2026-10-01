@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>phoneviewcomposer demo</title>
+<style>
+  body { margin: 0; width: 1280px; height: 800px; background: #f6f8fc; font: 14px Roboto, Arial, sans-serif; color: #1f1f1f; overflow: hidden; }
+  .top { height: 64px; display: flex; align-items: center; padding: 0 24px; gap: 16px; }
+  .logo { font-size: 22px; color: #444; width: 200px; }
+  .search { flex: 1; max-width: 720px; height: 46px; background: #e9eef6; border-radius: 24px; display: flex; align-items: center; padding: 0 20px; color: #5f6368; }
+  .main { position: absolute; left: 16px; right: 16px; top: 64px; bottom: 0; background: #fff; border-radius: 16px 16px 0 0; }
+  .rowx { height: 40px; border-bottom: 1px solid #f1f3f4; margin: 0 16px; display: flex; align-items: center; gap: 24px; color: #5f6368; }
+  .rowx b { color: #1f1f1f; width: 160px; }
+  .col { position: fixed; right: 24px; bottom: 0; width: 560px; }
+  .dialog { background: #fff; border-radius: 12px 12px 0 0; box-shadow: 0 8px 24px rgba(0,0,0,.25); height: 600px; display: flex; flex-direction: column; }
+  .head { background: #f2f6fc; border-radius: 12px 12px 0 0; padding: 12px 16px; font-weight: 500; }
+  .field { margin: 0 16px; padding: 10px 0; border-bottom: 1px solid #e0e0e0; display: flex; gap: 8px; align-items: center; }
+  .field input { border: 0; outline: 0; font: inherit; flex: 1; }
+  .chip { background: #e8eaed; border-radius: 12px; padding: 2px 10px; }
+  .editor { flex: 1; padding: 12px 16px; outline: 0; line-height: 1.5; }
+  .send { margin: 12px 16px; background: #0b57d0; color: #fff; border-radius: 18px; padding: 9px 24px; width: max-content; font-weight: 500; }
+  a.acct { position: fixed; right: 24px; top: 14px; width: 36px; height: 36px; border-radius: 50%; background: #1a73e8; }
+</style>
+</head>
+<body>
+<div class="top"><div class="logo">Mail</div><div class="search">Search mail</div></div>
+<a class="acct" aria-label="Google Account: Alex Morgan  (alex@example.com)"></a>
+<div class="main">
+  <div class="rowx"><b>Jordan Lee</b>Quarterly planning notes</div>
+  <div class="rowx"><b>Design Team</b>New brand assets are ready</div>
+  <div class="rowx"><b>Priya Shah</b>Lunch on Thursday?</div>
+  <div class="rowx"><b>Sam Rivera</b>Re: Contract draft</div>
+</div>
+<div class="col">
+  <div class="dialog" role="dialog">
+    <div class="head">Product launch next week</div>
+    <div class="field">To <span class="chip" data-hovercard-id="sam@example.com">Sam Rivera</span><input aria-label="To recipients"></div>
+    <div class="field"><input name="subjectbox" value="Product launch next week"></div>
+    <div class="editor" contenteditable="true" g_editable="true" role="textbox"><div>Hi Sam,</div><div><br></div><div>The launch is set for <b>Tuesday at 10am</b>. Here is the <a href="#">run sheet</a> with the final timeline.</div><div><br></div><ul><li>Press release goes out at 9:30am</li><li>Social posts follow at 10am, after the live demo</li></ul><div>Can you confirm the demo account is ready by Monday?</div><div><br></div><div>Thanks,<br>Alex</div></div>
+    <div class="send">Send</div>
+  </div>
+</div>
+<script src="../content.js"></script>
+<script>
+  // ?view=message opens the message in the phone, as a click on the inbox row does.
+  if (location.search.includes('view=message')) {
+    setTimeout(() => document.getElementById('pvc-host').shadowRoot.querySelector('[data-go="message"]').click(), 300);
+  }
+</script>
+</body>
+</html>

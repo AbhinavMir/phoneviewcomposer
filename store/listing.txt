@@ -1,0 +1,42 @@
+NAME
+phoneviewcomposer
+
+SUMMARY (max 132 characters)
+See your Gmail draft on a phone while you write it: the recipient's inbox row and the opened message, updated as you type.
+
+CATEGORY
+Productivity
+
+DESCRIPTION
+phoneviewcomposer shows a phone next to the Gmail compose window. The phone shows what the recipient sees on a mobile device, and it updates as you type.
+
+How it works:
+- The phone opens on the recipient's inbox. You see how your name, subject line and preview text look, and where the phone cuts them off.
+- Click the message in the phone to open it. You see the full message at phone width. Click the back arrow to return to the inbox.
+- Drag the phone to any position on the page.
+- Click the red dot to close the phone. Click the phone button to open it again.
+
+The phone uses the screen size of an iPhone 16 (393 x 852 points).
+
+Privacy: the extension runs only on mail.google.com. It reads the open compose window in your browser to draw the preview. It does not send, store or share any data, and it makes no network requests.
+
+SINGLE PURPOSE
+Show a live phone preview of the Gmail message that the user is composing.
+
+HOST PERMISSION JUSTIFICATION (https://mail.google.com/*)
+The content script reads the subject, recipients and body of the open Gmail compose window to draw the phone preview next to it. It runs only on Gmail.
+
+REMOTE CODE
+No, I am not using remote code.
+
+DATA USAGE
+Collects no user data. Check none of the data types. Certify all three statements (not sold, not used for unrelated purposes, not used for creditworthiness).
+
+ASSETS
+Icon: ../icons/icon128.png
+Screenshots (1280x800): screenshot-inbox.png, screenshot-message.png
+Small promo tile (440x280): promo-440x280.png
+Package: ../phoneviewcomposer.zip
+
+PRIVACY POLICY URL
+https://abhinavmir.xyz/phoneviewcomposeprivacy.html
